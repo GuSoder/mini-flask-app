@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Mini Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Cool Mini Flask App</h1>
+        <p class="description">
+            Welcome to the enhanced Flask application! This app now features beautiful styling, 
+            interactive buttons, and multiple routes. Click the buttons below to explore different 
+            functionalities and see the magic happen!
+        </p>
+        
+        <div class="button-group">
+            <a href="{{ url_for('click_me') }}" class="btn btn-primary">Click Me!</a>
+            <a href="{{ url_for('about') }}" class="btn btn-secondary">About</a>
+            <a href="{{ url_for('home') }}" class="btn btn-success">Home</a>
+        </div>
+        
+        {% if message %}
+        <div class="message">
+            {{ message }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
